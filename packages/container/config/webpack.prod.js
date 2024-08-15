@@ -9,12 +9,13 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
+    publicPath: '/container/latest/',
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        marketing: `marketing@${domain}/marketing/remoteEntry.js`, //Assuming that remoteEntry.js file is inside marketing folder
+        marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`, //Assuming that remoteEntry.js file is inside marketing folder (This is set in s3 path)
       },
       shared: packageJSON.dependencies,
     }),
