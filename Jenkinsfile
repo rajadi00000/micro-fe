@@ -53,7 +53,7 @@ pipeline {
                 if (env.WORKSPACE) {
                     cleanWs()
                 } else {
-                    echo 'Workspace not available, skipping cleanWs'
+                    echo 'Workspace is not available, skipping cleanWs'
                 }
             }
         }
